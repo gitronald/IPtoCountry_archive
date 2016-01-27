@@ -33,5 +33,3 @@ IP_lookup <- function(x, y) {
   final <- merge(res, DT, by=c("IPfrom", "IPto"))[order(i), .(Country)]
   as.character(final[[1]])
 }
-
-
