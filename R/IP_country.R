@@ -1,29 +1,45 @@
+# This line of code appeases the CRAN check for visible bindings, see:
+# http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when?rq=1
+utils::globalVariables(c("IPdatabase", "IPfrom", "IPto", "Country", ".", ":=", "i"))
+
+
 #' Convert IP addresses to country names
 #'
-#' @param IPaddress A vector of IP addresses
-#'
-#' @return Returns a vector of country names for the locations of \code{IPaddress}
+#' @param IP.address a character or factor vector of one or more IP addresses
+#' @param IP.database an IP database, see ?IP.database
+#' @return Returns a factor vector of country names corresponding to
+#'   \code{IPaddress}
 #'
 #' @export
-#'
 #' @examples
-#' IP_country(IP_generator(1000))
+#' mydata <- IP_generator(1000)
+#' IP_country(mydata)
 #'
 #'
-IP_country <- function(IPaddress) {
+IP_country <- function(IP.address, IP.database = NULL) {
   # Convert IP address(es) to country(ies)
   #
-  IPcode <- IP_code(IPaddress)
-  Country <- IP_lookup(IPdatabase, IPcode)
-  Country <- factor(Country)
-  return(Country)
+  IP.code <- IP_code(IP.address)
+  country <- IP_lookup(IP.code, IP.database)
+  country <- factor(country)
+  return(country)
 }
 
 
-IP_code <- function(IPaddress) {
+#' Convert IP addresses to IP codes
+#'
+#' @param IP.address a character or factor vector of one or more IP addresses
+#' @return Returns a numeric vector of IP codes corresponding to
+#'   \code{IPaddress}
+#'
+#' @export
+#' @examples
+#' IP_code(ips)
+#'
+IP_code <- function(IP.address) {
   # Convert IP address(es) to IP code(s)
   #
-  IPa <- as.character(IPaddress)
+  IPa <- as.character(IP.address)
   IPc <- strsplit(IPa, "\\.")
   IPc <- lapply(IPc, as.numeric)
   IPc <- do.call(rbind, IPc)
@@ -32,27 +48,28 @@ IP_code <- function(IPaddress) {
 }
 
 
-#' Title
+#' Match IP codes in a IP database
 #'
-#' @param x IP database
-#' @param y IP addresses
-#'
+#' @param IP.code a character or factor vector of one or more IP addresses
+#' @param IP.database an IP database, see ?IP.database
 #' @return Returns country from IP codes
 #' @importFrom data.table setDT setkey data.table foverlaps
 #' @export
-#'
 #' @examples
-#' data1 <- IP_code(ips)
-#' IP_lookup(data1)
-IP_lookup <- function(x, y) {
+#' ips.code <- IP_code(ips)
+#' IP_lookup(ips.code)
+IP_lookup <- function(IP.code, IP.database = NULL) {
   # Convert IP code(s) to country(ies)
   #
-  DT <- setDT(x)
+  if(is.null(IP.database)) IP.database <- IPdatabase
+  DT <- setDT(IP.database)
   setkey(DT, IPfrom, IPto)
-  DT2 <- data.table(IPfrom = y, IPto = y)
+  DT2 <- data.table(IPfrom = IP.code, IPto = IP.code)
   res <- foverlaps(DT2, DT[, .(IPfrom, IPto)], type="within")
   res[, i:=seq_len(nrow(res))]
   setkey(res, i)
   final <- merge(res, DT, by=c("IPfrom", "IPto"))[order(i), .(Country)]
-  as.character(final[[1]])
+  final <- as.character(final[[1]])
+
+  return(final)
 }
