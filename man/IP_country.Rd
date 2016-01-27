@@ -4,19 +4,23 @@
 \alias{IP_country}
 \title{Convert IP addresses to country names}
 \usage{
-IP_country(IPaddress)
+IP_country(IP.address, IP.database = NULL)
 }
 \arguments{
-\item{IPaddress}{A vector of IP addresses}
+\item{IP.address}{a character or factor vector of one or more IP addresses}
+
+\item{IP.database}{an IP database, see ?IP.database}
 }
 \value{
-Returns a vector of country names for the locations of \code{IPaddress}
+Returns a factor vector of country names corresponding to
+  \code{IPaddress}
 }
 \description{
 Convert IP addresses to country names
 }
 \examples{
-IP_country(IP_generator(1000))
+mydata <- IP_generator(1000)
+IP_country(mydata)
 
 
 }
