@@ -2,8 +2,8 @@ IP_country <- function(IPaddress) {
   # Convert IP address(es) to country(ies)
   #
   require(data.table)
-  IPcode <- IPa2c(IPaddress)
-  Country <- IPlookup(x=IPdatabase, y=IPcode)
+  IPcode <- IP_code(IPaddress)
+  Country <- IP_lookup(IPdatabase, IPcode)
   Country <- factor(Country)
   return(Country)
 }
