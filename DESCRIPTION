@@ -1,5 +1,5 @@
 Package: IPtoCountry
-Title: Fast IP Address to Country Name Converter
+Title: Fast IP Address to Country Converter
 Version: 0.0.0.9000
 Authors@R: person(c("Ronald", "E."), "Robertson",, "rrobertson@aibrt.org", c("cre", "aut"))
 Description: A fast IP address to country converter. Includes functions for converting IP
@@ -9,6 +9,6 @@ Depends:
     R (>= 3.2.3)
 Imports:
     data.table
-License: GNL-3
+License: GPL-3
 LazyData: true
 RoxygenNote: 5.0.1
