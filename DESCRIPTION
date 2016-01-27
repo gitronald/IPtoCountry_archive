@@ -1,8 +1,14 @@
 Package: IPtoCountry
-Title: What the Package Does (one line, title case)
+Title: Fast IP Address to Country Name Converter
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.2.3)
-License: What license is it under?
+Authors@R: person(c("Ronald", "E."), "Robertson",, "rrobertson@aibrt.org", c("cre", "aut"))
+Description: A fast IP address to country converter. Includes functions for converting IP
+  addresses to country names, converting IP addresses to IP codes, and looking up IP codes
+  in alternative databases. The default IP database is from ip2location.com.
+Depends:
+    R (>= 3.2.3)
+Imports:
+    data.table
+License: GNL-3
 LazyData: true
+RoxygenNote: 5.0.1
