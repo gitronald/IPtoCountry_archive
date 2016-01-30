@@ -1,6 +1,6 @@
 # This line of code appeases the CRAN check for visible bindings, see:
 # http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when?rq=1
-utils::globalVariables(c("IPdatabase", "IPfrom", "IPto", "Country", ".", ":=", "i"))
+utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".", ":=", "i"))
 
 
 #' Convert IP addresses to country names
@@ -60,7 +60,7 @@ IP_code <- function(IP.address) {
 IP_lookup <- function(IP.code, IP.database = NULL) {
   # Convert IP code(s) to country(ies)
   #
-  if(is.null(IP.database)) IP.database <- IPdatabase
+  if(is.null(IP.database)) IP.database <- ip2location.lite.db1
   DT <- setDT(IP.database)
   setkey(DT, IPfrom, IPto)
   DT2 <- data.table(IPfrom = IP.code, IPto = IP.code)

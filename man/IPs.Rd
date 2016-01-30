@@ -6,7 +6,7 @@
 \title{IP addresses}
 \format{A character vector with length 1000}
 \source{
-Generated using \link{\code{IP_generator}}
+Generated using \code{\link{IP_generator}}
 }
 \usage{
 IPs

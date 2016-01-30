@@ -6,10 +6,11 @@
 #
 # This site or product includes IP2Location LITE data
 # available from # http://lite.ip2location.com.
+# IP2Location LITE Edition is free package with accuracy up to Class C (192.168.1.X) only.
 
 
-IPdatabase <- read.table("data-raw/IP2LOCATION-LITE-DB1.CSV",
-                         col.names = c("IPfrom", "IPto", "Abrv", "Country"),
-                         sep = ",")
+ip2location.lite.db1 <- read.table("data-raw/IP2LOCATION-LITE-DB1.CSV",
+                                   col.names = c("IPfrom", "IPto", "Abrv", "Country"),
+                                   sep = ",")
 
-devtools::use_data(IPdatabase)
+devtools::use_data(ip2location.lite.db1)
