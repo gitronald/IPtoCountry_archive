@@ -18,7 +18,7 @@ Returns country from IP codes
 Match IP codes in a IP database
 }
 \examples{
-ips.code <- IP_code(ips)
-IP_lookup(ips.code)
+IPs.code <- IP_code(IPs)
+IP_lookup(IPs.code)
 }
 

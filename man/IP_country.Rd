@@ -19,8 +19,7 @@ Returns a factor vector of country names corresponding to
 Convert IP addresses to country names
 }
 \examples{
-mydata <- IP_generator(1000)
-IP_country(mydata)
+IP_country(IPs)
 
 
 }

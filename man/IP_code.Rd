@@ -17,7 +17,7 @@ Returns a numeric vector of IP codes corresponding to
 Convert IP addresses to IP codes
 }
 \examples{
-IP_code(ips)
+IP_code(IPs)
 
 }
 

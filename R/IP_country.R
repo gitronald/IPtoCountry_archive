@@ -12,8 +12,7 @@ utils::globalVariables(c("IPdatabase", "IPfrom", "IPto", "Country", ".", ":=", "
 #'
 #' @export
 #' @examples
-#' mydata <- IP_generator(1000)
-#' IP_country(mydata)
+#' IP_country(IPs)
 #'
 #'
 IP_country <- function(IP.address, IP.database = NULL) {
@@ -34,7 +33,7 @@ IP_country <- function(IP.address, IP.database = NULL) {
 #'
 #' @export
 #' @examples
-#' IP_code(ips)
+#' IP_code(IPs)
 #'
 IP_code <- function(IP.address) {
   # Convert IP address(es) to IP code(s)
@@ -56,8 +55,8 @@ IP_code <- function(IP.address) {
 #' @importFrom data.table setDT setkey data.table foverlaps
 #' @export
 #' @examples
-#' ips.code <- IP_code(ips)
-#' IP_lookup(ips.code)
+#' IPs.code <- IP_code(IPs)
+#' IP_lookup(IPs.code)
 IP_lookup <- function(IP.code, IP.database = NULL) {
   # Convert IP code(s) to country(ies)
   #
