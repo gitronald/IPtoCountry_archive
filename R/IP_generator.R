@@ -10,7 +10,7 @@
 #' IP_generator(100)
 IP_generator <- function(n) {
   ips <- vector("list", n)
-  ips <- lapply(ips, function(x) x <- paste(sample(1:223, 1),
+  ips <- lapply(ips, function(x) x <- paste(sample(1:255, 1),
                                             sample(0:255, 1),
                                             sample(0:255, 1),
                                             sample(0:255, 1),

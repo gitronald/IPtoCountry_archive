@@ -3,7 +3,7 @@
 utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".", ":=", "i"))
 
 
-#' Convert IP addresses to country names
+#' Convert IP address to country name
 #'
 #' @param IP.address a character or factor vector of one or more IP addresses
 #' @param IP.database an IP database, see ?IP.database
@@ -15,24 +15,24 @@ utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".
 #' IP_country(IPs)
 #'
 IP_country <- function(IP.address, IP.database = NULL) {
-  IP.code <- IP_code(IP.address)
-  country <- IP_lookup(IP.code, IP.database)
+  IP.integer <- IP_integer(IP.address)
+  country <- IP_lookup(IP.integer, IP.database)
   country <- factor(country)
   return(country)
 }
 
 
-#' Convert IP addresses to IP codes
+#' Convert IP address to IP integer
 #'
 #' @param IP.address a character or factor vector of one or more IP addresses
-#' @return Returns a numeric vector of IP codes corresponding to
-#'   \code{IPaddress}
+#' @return Returns a numeric vector of IP integers calculated from \code{IPaddress}
+#'   by spliting the string
 #'
 #' @export
 #' @examples
-#' IP_code(IPs)
+#' IP_integer(IPs)
 #'
-IP_code <- function(IP.address) {
+IP_integer <- function(IP.address) {
   IPa <- as.character(IP.address)
   IPc <- strsplit(IPa, "\\.")
   IPc <- lapply(IPc, as.numeric)
@@ -42,21 +42,22 @@ IP_code <- function(IP.address) {
 }
 
 
-#' Match IP codes in a IP database
+#' Match IP integer to country name
 #'
-#' @param IP.code a character or factor vector of one or more IP addresses
-#' @param IP.database an IP database, see ?IP.database
-#' @return Returns country from IP codes
+#' @param IP.integer a character or factor vector of one or more IP addresses
+#' @param IP.database an IP database, see \code{?ip2location} for details on
+#'   default database from \url{http://lite.ip2location.com}
+#' @return Returns country from IP integers
 #' @importFrom data.table setDT setkey data.table foverlaps
 #' @export
 #' @examples
-#' IPs.code <- IP_code(IPs)
-#' IP_lookup(IPs.code)
-IP_lookup <- function(IP.code, IP.database = NULL) {
+#' IP.integer <- IP_integer(IPs)
+#' IP_lookup(IP.integer)
+IP_lookup <- function(IP.integer, IP.database = NULL) {
   if(is.null(IP.database)) IP.database <- ip2location.lite.db1
   DT <- setDT(IP.database)
   setkey(DT, IPfrom, IPto)
-  DT2 <- data.table(IPfrom = IP.code, IPto = IP.code)
+  DT2 <- data.table(IPfrom = IP.integer, IPto = IP.integer)
   res <- foverlaps(DT2, DT[, .(IPfrom, IPto)], type="within")
   res[, i:=seq_len(nrow(res))]
   setkey(res, i)

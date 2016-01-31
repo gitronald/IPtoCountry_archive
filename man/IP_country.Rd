@@ -2,7 +2,7 @@
 % Please edit documentation in R/IP_country.R
 \name{IP_country}
 \alias{IP_country}
-\title{Convert IP addresses to country names}
+\title{Convert IP address to country name}
 \usage{
 IP_country(IP.address, IP.database = NULL)
 }
@@ -16,11 +16,10 @@ Returns a factor vector of country names corresponding to
   \code{IPaddress}
 }
 \description{
-Convert IP addresses to country names
+Convert IP address to country name
 }
 \examples{
 IP_country(IPs)
-
 
 }
 

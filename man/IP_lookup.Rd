@@ -2,23 +2,24 @@
 % Please edit documentation in R/IP_country.R
 \name{IP_lookup}
 \alias{IP_lookup}
-\title{Match IP codes in a IP database}
+\title{Match IP integers to country}
 \usage{
-IP_lookup(IP.code, IP.database = NULL)
+IP_lookup(IP.integer, IP.database = NULL)
 }
 \arguments{
-\item{IP.code}{a character or factor vector of one or more IP addresses}
+\item{IP.integer}{a character or factor vector of one or more IP addresses}
 
-\item{IP.database}{an IP database, see ?IP.database}
+\item{IP.database}{an IP database, see \code{?ip2location} for details on
+default database from \url{http://lite.ip2location.com}}
 }
 \value{
-Returns country from IP codes
+Returns country from IP integers
 }
 \description{
-Match IP codes in a IP database
+Match IP integers to country
 }
 \examples{
-IPs.code <- IP_code(IPs)
-IP_lookup(IPs.code)
+IP.integer <- IP_integer(IPs)
+IP_lookup(IP.integer)
 }
 
