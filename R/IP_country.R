@@ -6,7 +6,7 @@ utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".
 #' Convert IP address to country name
 #'
 #' @param IP.address a character or factor vector of one or more IP addresses
-#' @param IP.database an IP database, see ?IP.database
+#' @param IP.database an IP database, see \code{?ip2location.lite.db1}
 #' @return Returns a factor vector of country names corresponding to
 #'   \code{IP.address}
 #'
