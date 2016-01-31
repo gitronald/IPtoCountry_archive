@@ -14,10 +14,7 @@ utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".
 #' @examples
 #' IP_country(IPs)
 #'
-#'
 IP_country <- function(IP.address, IP.database = NULL) {
-  # Convert IP address(es) to country(ies)
-  #
   IP.code <- IP_code(IP.address)
   country <- IP_lookup(IP.code, IP.database)
   country <- factor(country)
@@ -36,8 +33,6 @@ IP_country <- function(IP.address, IP.database = NULL) {
 #' IP_code(IPs)
 #'
 IP_code <- function(IP.address) {
-  # Convert IP address(es) to IP code(s)
-  #
   IPa <- as.character(IP.address)
   IPc <- strsplit(IPa, "\\.")
   IPc <- lapply(IPc, as.numeric)
@@ -58,8 +53,6 @@ IP_code <- function(IP.address) {
 #' IPs.code <- IP_code(IPs)
 #' IP_lookup(IPs.code)
 IP_lookup <- function(IP.code, IP.database = NULL) {
-  # Convert IP code(s) to country(ies)
-  #
   if(is.null(IP.database)) IP.database <- ip2location.lite.db1
   DT <- setDT(IP.database)
   setkey(DT, IPfrom, IPto)
@@ -69,6 +62,5 @@ IP_lookup <- function(IP.code, IP.database = NULL) {
   setkey(res, i)
   final <- merge(res, DT, by=c("IPfrom", "IPto"))[order(i), .(Country)]
   final <- as.character(final[[1]])
-
   return(final)
 }
