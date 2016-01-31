@@ -8,7 +8,7 @@ utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".
 #' @param IP.address a character or factor vector of one or more IP addresses
 #' @param IP.database an IP database, see ?IP.database
 #' @return Returns a factor vector of country names corresponding to
-#'   \code{IPaddress}
+#'   \code{IP.address}
 #'
 #' @export
 #' @examples
@@ -25,9 +25,10 @@ IP_country <- function(IP.address, IP.database = NULL) {
 #' Convert IP address to IP integer
 #'
 #' @param IP.address a character or factor vector of one or more IP addresses
-#' @return Returns a numeric vector of IP integers calculated from \code{IPaddress}
-#'   by spliting the string
-#'
+#' @return Returns a numeric vector of IP integers from \code{IP.address}. The
+#'   coversion formula used here splits the string into four octets, multiplies
+#'   the first three by 256^(4-n), and takes the sum of the four modified
+#'   octets.
 #' @export
 #' @examples
 #' IP_integer(IPs)
