@@ -2,7 +2,6 @@
 # http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when?rq=1
 utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".", ":=", "i"))
 
-
 #' Convert IP address to country name
 #'
 #' @param IP.address a character or factor vector of one or more IP addresses
