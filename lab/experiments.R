@@ -13,8 +13,8 @@ IP_binary_string <- c(IP_dataframe <- sapply(IP, function(x) {
 # New methods -------------------------------------------------------------
 
 # Rough start/format example:
-IP <- c(75)
-IP_binary <- sapply(IP, function(x)) {
+x <- 75
+IP_binary <- function(x) {
   binary_vector <- rev(as.numeric(intToBits(x)))
   binary_vector <- binary_vector[-(1:(length(binary_vector) - 8))]
   return(binary_vector)
