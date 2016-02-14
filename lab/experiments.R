@@ -40,5 +40,22 @@ y <- IP_split(x)
 # Proof of concept for IP_binary
 lapply(y, function(x) as.numeric(intToBits(x))) # E.g. For each column of y, convert value to numeric binary
 
+# JM update with binary converter
+IP_split <- function(IP.address) {
+  IPa <- as.character(IP.address)  # Convert value(s) to character
+  IPs <- strsplit(IPa, "\\.")      # Split on "." ("\\" used for special characters)
+  IPs <- lapply(IPs, function(x) {
+    binary_vector <- rev(as.numeric(intToBits(x)))
+    binary_vector <- binary_vector[-(1:(length(binary_vector) - 8))]
+    return(binary_vector)
+  })   # Convert list(s) to numeric
+  IPs <- do.call(rbind, IPs)       # Rbind lists to matrix
+  return(IPs)                      # Return IP data.frame
+}
+
+a <- IP_generator(20)
+b <- strsplit(a, "\\.")
+c <- do.call(rbind, b)
+
 
 
