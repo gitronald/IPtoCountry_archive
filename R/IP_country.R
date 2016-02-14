@@ -33,14 +33,19 @@ IP_country <- function(IP.address, IP.database = NULL) {
 #' IP_integer(IPs)
 #'
 IP_integer <- function(IP.address) {
-  IPa <- as.character(IP.address)
-  IPc <- strsplit(IPa, "\\.")
-  IPc <- lapply(IPc, as.numeric)
-  IPc <- do.call(rbind, IPc)
-  IPc <- 16777216*IPc[, 1] + 65536*IPc[, 2] + 256*IPc[, 3] + IPc[, 4]
-  return(IPc)
+  ip.split <- IP_split(IP.address)
+  ip.integer <- 16777216*ip.split[, 1] + 65536*ip.split[, 2] + 256*ip.split[, 3] + ip.split[, 4]
+  return(ip.integer)
 }
 
+# Split IP addresses
+IP_split <- function(IP.address, integer = TRUE, data.frame = TRUE) {
+  ip.split <- strsplit(IP.address, "\\.")
+  ip.split <- do.call(rbind, ip.split)
+  if(integer) ip.split <- apply(ip.split, 2, as.integer)
+  if(data.frame) ip.split <- as.data.frame(ip.split)
+  return(ip.split)
+}
 
 #' Match IP integer to country name
 #'
