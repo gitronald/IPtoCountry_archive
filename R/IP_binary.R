@@ -1,8 +1,13 @@
-# Create a single sample IP
-x <- IP_generator(1)
-
-# Create method for splitting an IP address values into matrix 
-# (pulled from IP_integer):
+#' Convert IP address to binary
+#' 
+#' Create method for splitting an IP address values into lists of binary values
+#' 
+#' @param IP.address A character vector of IP addresses.
+#'   
+#' @return A list of IP addresses converted to character strings of binary
+#'   values
+#' @export
+#' 
 IP_binary <- function(IP.address) {
   IPs <- IP_split(IP.address)
   IPs <- split(IPs, seq(nrow(IPs)))
