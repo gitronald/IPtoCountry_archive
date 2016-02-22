@@ -26,7 +26,7 @@ IP_binary <- function(x) {
 x <- IP_generator(1)
 
 # Create method for splitting an IP address values into matrix (pulled from IP_integer):
-IP_split <- function(IP.address) {
+IP_binary <- function(IP.address) {
   IPa <- as.character(IP.address)  # Convert value(s) to character
   IPs <- strsplit(IPa, "\\.")      # Split on "." ("\\" used for special characters)
   IPs <- lapply(IPs, as.numeric)   # Convert list(s) to numeric
