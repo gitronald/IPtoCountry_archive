@@ -41,7 +41,6 @@ Install the current version of this package by running `devtools::install_github
 
 #### To Do
 Here's our current to do list! Help, suggestions, and comments welcome.
-* Add function for converting IP address to binary
 * Add function for converting IP integer to IP address
 * Add functions to handle IPv6 addresss
 * Expand database capabilities with ip2locations other free datasets.
