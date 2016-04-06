@@ -2,7 +2,7 @@
 % Please edit documentation in R/IP_country.R
 \name{IP_lookup}
 \alias{IP_lookup}
-\title{Match IP integers to country}
+\title{Match IP integer to country name}
 \usage{
 IP_lookup(IP.integer, IP.database = NULL)
 }
@@ -16,7 +16,7 @@ default database from \url{http://lite.ip2location.com}}
 Returns country from IP integers
 }
 \description{
-Match IP integers to country
+Match IP integer to country name
 }
 \examples{
 IP.integer <- IP_integer(IPs)

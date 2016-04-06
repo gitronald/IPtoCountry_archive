@@ -6,7 +6,8 @@ Description: A fast IP address to country converter. Includes functions for conv
   addresses to country names, converting IP addresses to IP codes, and looking up IP codes
   in alternative databases. The default IP database is from ip2location.com.
 Depends:
-    R (>= 3.2.3)
+    R (>= 3.2.3),
+    ggplot2
 Imports:
     data.table
 License: GPL-3
