@@ -33,7 +33,9 @@ IP_country <- function(IP.address, IP.database = NULL) {
 #' head(IP_integer(IPs))
 #'
 IP_integer <- function(IP.address) {
+
   ip.split <- IP_split(IP.address)
+  if(length(IP.address) == 1) ip.split = t(ip.split)
   ip.integer <- 16777216*ip.split[, 1] + 65536*ip.split[, 2] + 256*ip.split[, 3] + ip.split[, 4]
   return(ip.integer)
 }
