@@ -22,7 +22,7 @@ Internet Protocol (IP) addresses serve as the feelers upon which the Internet is
 * Example IPv4 address: `180.20.23.162`  
 * Example IPv6 address: `2001:0db8:0000:0042:0000:8a2e:0370:7334`  
 
-As you might guess from the examples, IPv6 addresses are far more complex, and allow for far more possible combinations than IPv4. This is why they were built - to overcome the eventual exhaustion of available IPv4 addresses. Since that exhaustion hasn't happened yet, we will simply *ignore them*. 
+IPv6 was built to overcome the eventual exhaustion of available IPv4 addresses, but that hasn't largely happened yet, so we'll just ignore IPv6 for now.
 
 ### Determining the Location of IP Addresses
 
