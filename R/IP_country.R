@@ -35,7 +35,6 @@ IP_country <- function(IP.address, IP.database = NULL) {
 IP_integer <- function(IP.address) {
 
   ip.split <- IP_split(IP.address)
-  if(length(IP.address) == 1) ip.split = t(ip.split)
   ip.integer = unname(16777216*ip.split[, 1] + 65536*ip.split[, 2] + 256*ip.split[, 3] + ip.split[, 4])
   return(ip.integer)
 }
@@ -58,6 +57,7 @@ IP_split <- function(IP.address, integer = TRUE, data.frame = TRUE) {
   ip.split <- do.call(rbind, ip.split)
   if(integer) ip.split <- apply(ip.split, 2, as.integer)
   if(data.frame) ip.split <- as.data.frame(ip.split)
+  if(length(IP.address) == 1) ip.split = t(ip.split)
   return(ip.split)
 }
 
