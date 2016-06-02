@@ -30,7 +30,7 @@ IP_country <- function(IP.address, IP.database = NULL) {
 #'   octets.
 #' @export
 #' @examples
-#' IP_integer(IPs)
+#' head(IP_integer(IPs))
 #'
 IP_integer <- function(IP.address) {
   ip.split <- IP_split(IP.address)
@@ -38,7 +38,19 @@ IP_integer <- function(IP.address) {
   return(ip.integer)
 }
 
-# Split IP addresses
+
+#' Split IP addresses
+#'
+#' @param IP.address vector of IPv4 addresses
+#' @param integer logical, convert output to class integer
+#' @param data.frame logical, convert output to data.frame
+#'
+#' @return Returns a matrix or data.frame with four columns and as many rows as
+#'   IP.addresses were inputted
+#' @export
+#'
+#' @examples
+#' head(IP_split(IPs))
 IP_split <- function(IP.address, integer = TRUE, data.frame = TRUE) {
   ip.split <- strsplit(IP.address, "\\.")
   ip.split <- do.call(rbind, ip.split)
