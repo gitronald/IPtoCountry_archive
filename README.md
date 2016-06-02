@@ -5,7 +5,7 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/dtables)](http://cran.r-project.org/package=dtables)
 --->
 
-* A fast function for converting IP addresses (IPv4) to the name of the country they're located in.
+* A fast function for converting IP addresses (IPv4) to the country names they're located in.
 
 <sub>Default database is available by Creative Commons Attribution-ShareAlike 4.0 Interational license (CC-BY-SA 4.0).  
 This site or product includes IP2Location LITE data available from http://www.ip2location.com.</sub>
