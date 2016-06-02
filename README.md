@@ -30,7 +30,7 @@ The first step in the conversion algorithm is to split your IP addresses into *o
 
 A formula for converting IP addresses to IP integer:
 
-#### Step 1 - Split IP address into four octets -------
+#### Step 1 - Split IP address into four octets  -------
 ``` {r}
 > IP_split("180.20.23.162")
 ```
@@ -39,7 +39,8 @@ A formula for converting IP addresses to IP integer:
 ip.split  180   20   23  162
 ```
 
-#### Step 2 - Calculate IP Integer from Octets -------
+#### Step 2 - Calculate IP Integer from Octets  -------
+* Long way
 ``` {r}
 > Octet1 = 180
 > Octet2 = 20
@@ -50,7 +51,7 @@ ip.split  180   20   23  162
 ``` {r}
 [1] 3021215650
 ```
-OR just use the `IP_integer` function
+* Short way!
 ``` {r}
 > IP_integer("180.20.23.162")
 ```
@@ -58,7 +59,7 @@ OR just use the `IP_integer` function
 [1] 3021215650
 ```
 
-#### Step 3 - Lookup Location Assigned to IP Integers in a Database -------
+#### Step 3 - Lookup Location Assigned to IP Integers in a Database  -------
 ``` {r}
 > IP_lookup(3021215650)
 ```
@@ -67,6 +68,7 @@ OR just use the `IP_integer` function
 ```
 
 ### IP_country - Fast IP address to country name conversion
+* All of the above in one simple function
 * Powered by `data.table`
 
 ``` {r}
@@ -78,9 +80,8 @@ OR just use the `IP_integer` function
 Levels: Japan
 ```
 ### IP_generator - Fool your friends!
-
+* Generate five random IP addresses
 ``` {r}
-# Generate 5 random IP addresses
 > IP_generator(5)
 
 ```
@@ -88,7 +89,7 @@ Levels: Japan
 [1] "125.65.50.53"    "79.250.76.62"    "142.245.152.177" "230.76.201.42"   "107.182.57.171" 
 ```
 
-### SPEED
+### Speed
 * Ludicrous speed, 33,333 IPs/sec feels like 666 km/sec.
 ``` {r}
 > microbenchmark(IP_country(IP_generator(10000)))
@@ -103,6 +104,5 @@ Unit: milliseconds
 
 
 
-#### To Do
-Here's our current to do list! Help, suggestions, and comments welcome.
+#### todo
 * Finish IP_binary function and add reverse function
