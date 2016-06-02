@@ -30,7 +30,8 @@ The first step in the conversion algorithm is to split your IP addresses into *o
 
 A formula for converting IP addresses to IP integer:
 
-#### Step 1 - Split IP address into four octets  -------
+#### Step 1 - Split IP address into four octets  
+-------
 ``` {r}
 > IP_split("180.20.23.162")
 ```
@@ -39,7 +40,8 @@ A formula for converting IP addresses to IP integer:
 ip.split  180   20   23  162
 ```
 
-#### Step 2 - Calculate IP Integer from Octets  -------
+#### Step 2 - Calculate IP Integer from Octets  
+-------
 * Long way
 ``` {r}
 > Octet1 = 180
@@ -59,7 +61,8 @@ ip.split  180   20   23  162
 [1] 3021215650
 ```
 
-#### Step 3 - Lookup Location Assigned to IP Integers in a Database  -------
+#### Step 3 - Lookup Location Assigned to IP Integers in a Database  
+-------
 ``` {r}
 > IP_lookup(3021215650)
 ```
