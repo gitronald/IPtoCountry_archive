@@ -35,7 +35,6 @@ A formula for converting IP addresses to IP integer:
 > IP_split("180.20.23.162")
 ```
 ```{r}
-> IP_split("180.20.23.162")
          [,1] [,2] [,3] [,4]
 ip.split  180   20   23  162
 ```
@@ -46,17 +45,16 @@ ip.split  180   20   23  162
 > Octet2 = 20
 > Octet3 = 23
 > Octet4 = 162
-> IP.integer = (Octet1 * 256^3) + (Octet2 * 256^2) + (Octet3 * 256^1) + (Octet4 * 256^0)
-> IP.integer
+> (Octet1 * 256^3) + (Octet2 * 256^2) + (Octet3 * 256^1) + (Octet4 * 256^0)
 ```
-```
+``` {r}
 [1] 3021215650
 ```
 OR just use the `IP_integer` function
 ``` {r}
 > IP_integer("180.20.23.162")
 ```
-```
+``` {r}
 [1] 3021215650
 ```
 
@@ -64,7 +62,7 @@ OR just use the `IP_integer` function
 ``` {r}
 > IP_lookup(3021215650)
 ```
-```
+``` {r}
 [1] "Japan"
 ```
 
@@ -75,7 +73,7 @@ OR just use the `IP_integer` function
 > IP_country("180.20.23.162")
 
 ```
-```
+``` {r}
 [1] Japan
 Levels: Japan
 ```
@@ -86,17 +84,17 @@ Levels: Japan
 > IP_generator(5)
 
 ```
-```
+``` {r}
 [1] "125.65.50.53"    "79.250.76.62"    "142.245.152.177" "230.76.201.42"   "107.182.57.171" 
 ```
 
 ### SPEED
 * Ludicrous speed, 33,333 IPs/sec feels like 666 km/sec.
-```{r}
+``` {r}
 > microbenchmark(IP_country(IP_generator(10000)))
 
 ```
-```
+``` {r}
 Unit: milliseconds
                             expr      min       lq     mean   median       uq      max neval
  IP_country(IP_generator(10000)) 325.8086 364.2893 390.6751 383.0947 413.8585 500.9444   100
