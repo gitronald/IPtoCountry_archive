@@ -5,9 +5,7 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/dtables)](http://cran.r-project.org/package=dtables)
 --->
 
-* The goal of IPtoCountry is to provide a simple and free set of functions for converting IP addresses (IPv4) to the country they're located in.
-* The purpose of IPtoCountry is really just to make my life, and hopefully yours, a little easier.
-* If you have any questions or want to help out feel free to send me an email or a pull request! My email can be found in the DESCRIPTION.
+* A fast function for converting IP addresses (IPv4) to the name of the country they're located in.
 
 <sub>Default database is available by Creative Commons Attribution-ShareAlike 4.0 Interational license (CC-BY-SA 4.0).  
 This site or product includes IP2Location LITE data available from http://www.ip2location.com.</sub>
