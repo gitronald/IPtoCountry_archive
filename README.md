@@ -25,10 +25,6 @@ Internet Protocol (IP) addresses serve as the feelers upon which the Internet is
 As you might guess from the examples, IPv6 addresses are far more complex, and allow for far more possible combinations than IPv4. This is why they were built - to overcome the eventual exhaustion of available IPv4 addresses. Since that exhaustion hasn't happened yet, we will simply *ignore them*. 
 
 ### Determining the Location of IP Addresses
-In order to figure out where an IP address is coming from, you need a recipe, or algorithm, for converting it.
-The first step in the conversion algorithm is to split your IP addresses into *octets*
-
-A formula for converting IP addresses to IP integer:
 
 #### Step 1 - Split IP address into four octets  
 -------
