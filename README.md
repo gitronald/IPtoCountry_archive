@@ -18,9 +18,10 @@ data(IPs)
 ```
 
 ### IP Addresses
-Internet Protocol (IP) addresses serve as the backbone on which Internet is able to network and connect computers and servers across great distances and large crowds. These IP addresses come in two forms: IPv4 and IPv6.  
+Internet Protocol (IP) addresses serve as the feelers upon which the Internet is able to connect computers and servers across great distances and within complicated clusters. These IP addresses come in two forms, IPv4 and IPv6:  
 * Example IPv4 address: `180.20.23.162`  
 * Example IPv6 address: `2001:0db8:0000:0042:0000:8a2e:0370:7334`  
+
 As you might guess from the examples, IPv6 addresses are far more complex, and allow for far more possible combinations than IPv4. This is why they were built - to overcome the eventual exhaustion of available IPv4 addresses. Since that exhaustion hasn't happened yet, we will simply *ignore them*. 
 
 ### Determining the Location of IP Addresses
@@ -29,7 +30,7 @@ The first step in the conversion algorithm is to split your IP addresses into *o
 
 A formula for converting IP addresses to IP integer:
 
-_Step 1 - Split IP address into four octets_
+#### Step 1 - Split IP address into four octets -------
 ``` {r}
 > IP.address = "180.20.23.162"
 > IP_split(IP.address)
@@ -42,7 +43,7 @@ _Step 1 - Split IP address into four octets_
 4      162
 ```
 
-_Step 2 - Calculate IP Integer from Octets_
+#### Step 2 - Calculate IP Integer from Octets -------
 ``` {r}
 > Octet1 = 180
 > Octet2 = 20
@@ -62,7 +63,7 @@ OR just use the `IP_integer` function
 [1] 3021215650
 ```
 
-_Step 3 - Lookup Location Assigned to IP Integers in a Database_
+#### Step 3 - Lookup Location Assigned to IP Integers in a Database -------
 ``` {r}
 > IP_lookup(3021215650)
 ```
@@ -74,12 +75,12 @@ _Step 3 - Lookup Location Assigned to IP Integers in a Database_
 * Powered by `data.table`
 
 ``` {r}
-> IP_country(IPs[1])
+> IP_country("180.20.23.162")
 
 ```
 ```
-[1] Netherlands
-Levels: Netherlands
+[1] Japan
+Levels: Japan
 ```
 ### IP_generator - Fool your friends!
 
