@@ -32,15 +32,12 @@ A formula for converting IP addresses to IP integer:
 
 #### Step 1 - Split IP address into four octets -------
 ``` {r}
-> IP.address = "180.20.23.162"
-> IP_split(IP.address)
+> IP_split("180.20.23.162")
 ```
-```
-  ip.split
-1      180
-2       20
-3       23
-4      162
+```{r}
+> IP_split("180.20.23.162")
+         [,1] [,2] [,3] [,4]
+ip.split  180   20   23  162
 ```
 
 #### Step 2 - Calculate IP Integer from Octets -------
