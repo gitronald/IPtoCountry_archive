@@ -19,7 +19,7 @@ Returns a numeric vector of IP integers from \code{IP.address}. The
 Convert IP address to IP integer
 }
 \examples{
-IP_integer(IPs)
+head(IP_integer(IPs))
 
 }
 
