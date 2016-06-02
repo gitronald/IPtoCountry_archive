@@ -6,8 +6,8 @@
 \title{IP database}
 \format{A data.frame with four variables
 \describe{
-  \item{IPFrom}{Start of IP code range}
-  \item{IPto}{End of IP code range}
+  \item{IPFrom}{Start of IP integer range}
+  \item{IPto}{End of IP integer range}
   \item{Abrv}{Two-character country code based on ISO 3166.}
   \item{Country}{Country name based on ISO 3166.}
 }}
@@ -18,7 +18,7 @@
 ip2location.lite.db1
 }
 \description{
-A dataset containing 141,822 IP code ranges and their corresponding country
+A dataset containing 141,822 IP integer ranges and their corresponding country
 names and abbreviations
 }
 \keyword{datasets}

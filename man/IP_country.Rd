@@ -9,11 +9,11 @@ IP_country(IP.address, IP.database = NULL)
 \arguments{
 \item{IP.address}{a character or factor vector of one or more IP addresses}
 
-\item{IP.database}{an IP database, see ?IP.database}
+\item{IP.database}{an IP database, see \code{?ip2location.lite.db1}}
 }
 \value{
 Returns a factor vector of country names corresponding to
-  \code{IPaddress}
+  \code{IP.address}
 }
 \description{
 Convert IP address to country name

@@ -10,14 +10,16 @@ IP_integer(IP.address)
 \item{IP.address}{a character or factor vector of one or more IP addresses}
 }
 \value{
-Returns a numeric vector of IP integers calculated from \code{IPaddress}
-  by spliting the string
+Returns a numeric vector of IP integers from \code{IP.address}. The
+  coversion formula used here splits the string into four octets, multiplies
+  the first three by 256^(4-n), and takes the sum of the four modified
+  octets.
 }
 \description{
 Convert IP address to IP integer
 }
 \examples{
-IP_integer(IPs)
+head(IP_integer(IPs))
 
 }
 
