@@ -25,7 +25,7 @@ Internet Protocol (IP) addresses serve as the feelers upon which the Internet is
 * Example IPv4 address: `180.20.23.162`  
 * Example IPv6 address: `2001:0db8:0000:0042:0000:8a2e:0370:7334`  
 
-IPv6 was built to overcome the eventual exhaustion of available IPv4 addresses, but that hasn't largely happened yet, so we'll just ignore them for now, and focus on IPv4.
+IPv6 was built to overcome the eventual exhaustion of available IPv4 addresses, but that hasn't largely happened yet, so we'll just ignore them for now and focus on IPv4.
 
 ### Determining the Location of IP Addresses
 
