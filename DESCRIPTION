@@ -7,7 +7,6 @@ Description: A fast IP address to country converter. Includes functions for conv
   in alternative databases. The default IP database is from ip2location.com.
 Depends:
     R (>= 3.2.3),
-    ggplot2
 Imports:
     data.table
 License: GPL-3
