@@ -1,9 +1,12 @@
 # IPtoCountry
 
+[![Build Status](https://travis-ci.org/gitronald/IPtoCountry.svg?branch=master)](https://travis-ci.org/gitronald/IPtoCountry)
+
 <!--
-[![Build Status](https://travis-ci.org/gitronald/dtables.svg?branch=master)](https://travis-ci.org/gitronald/dtables)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/dtables)](http://cran.r-project.org/package=dtables)
---->
+[![CRAN_Downloads_Badge](http://cranlogs.r-pkg.org/badges/grand-total/IPtoCountry)](http://cran.r-project.org/package=IPtoCountry)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/IPtoCountry)](http://cran.r-project.org/package=IPtoCountry)
+-->
+
 
 * A fast function for converting IP addresses (IPv4) to the country names they're located in.
 
