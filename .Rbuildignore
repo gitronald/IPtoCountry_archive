@@ -3,3 +3,4 @@
 ^data-raw$
 ^lab$
 ^tests$
+^.travis.yml
