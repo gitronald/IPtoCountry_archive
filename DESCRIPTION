@@ -1,10 +1,11 @@
 Package: IPtoCountry
 Title: Fast IP Address to Country Converter
 Version: 0.0.0.9001
-Authors@R: C(
-person ("Ronald", "E."), "Robertson",, "rrobertson@aibrt.org", c("cre", "aut")
-person("Christine", "Mourani", email = "cmourani12@yahoo.com", role = "ctb")
-person("Jonathan", "Mejia", email = "mejiajon@yahoo.com", role = "ctb"))
+Authors@R: c(
+    person(c("Ronald", "E."), "Robertson",, "rrobertson@aibrt.org", c("cre", "aut")),
+    person("Christine", "Mourani", email = "cmourani12@yahoo.com", role = "ctb"),
+    person("Jonathan", "Mejia", email = "mejiajon@yahoo.com", role = "ctb")
+    )
 Description: A fast IP address to country converter. Includes functions for converting IP
   addresses to country names, converting IP addresses to IP codes, and looking up IP codes
   in alternative databases. The default IP database is from ip2location.com.
