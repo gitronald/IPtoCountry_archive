@@ -3,10 +3,10 @@
 \docType{data}
 \name{ip2location.lite.db1}
 \alias{ip2location.lite.db1}
-\title{IP database}
+\title{IP database - small}
 \format{A data.frame with four variables
 \describe{
-  \item{IPFrom}{Start of IP integer range}
+  \item{IPfrom}{Start of IP integer range}
   \item{IPto}{End of IP integer range}
   \item{Abrv}{Two-character country code based on ISO 3166.}
   \item{Country}{Country name based on ISO 3166.}
@@ -18,8 +18,11 @@
 ip2location.lite.db1
 }
 \description{
-A dataset containing 141,822 IP integer ranges and their corresponding country
+A dataset containing 149,449 IP integer ranges and their corresponding country
 names and abbreviations
+}
+\details{
+Last updated: 06/06/2016
 }
 \keyword{datasets}
 
