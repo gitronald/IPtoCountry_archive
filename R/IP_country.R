@@ -64,7 +64,7 @@ IP_split <- function(IP.address, integer = TRUE, data.frame = TRUE) {
 #' Match IP integer to country name
 #'
 #' @param IP.integer a character or factor vector of one or more IP addresses
-#' @param IP.database an IP database, see \code{?ip2location} for details on
+#' @param IP.database an IP database, see \code{?ip2location.lite.db1} for details on
 #'   default database from \url{http://lite.ip2location.com}
 #' @return Returns country from IP integers
 #' @importFrom data.table setDT setkey data.table foverlaps
@@ -86,8 +86,7 @@ IP_lookup <- function(IP.integer, IP.database = NULL) {
 }
 
 
-
-#' Match IP integer to country name
+#' Match IP integer to all location data
 #'
 #' @param IP.integer a character or factor vector of one or more IP addresses
 #' @param IP.database an IP database, see \code{?ip2location} for details on
@@ -97,8 +96,8 @@ IP_lookup <- function(IP.integer, IP.database = NULL) {
 #' @export
 #' @examples
 #' IP.integer <- IP_integer(IPs)
-#' IP_lookup(IP.integer)
-IP_lookup2 <- function(IP.integer, IP.database = NULL) {
+#' IP_lookup_full(IP.integer)
+IP_lookup_full <- function(IP.integer, IP.database = NULL) {
   if(is.null(IP.database)) IP.database <- ip2location.lite.db11
   DT <- setDT(IP.database)
   setkey(DT, IPfrom, IPto)
@@ -106,103 +105,39 @@ IP_lookup2 <- function(IP.integer, IP.database = NULL) {
   res <- foverlaps(DT2, DT[, .(IPfrom, IPto)], type="within")
   res[, i:=seq_len(nrow(res))]
   setkey(res, i)
-  final <- merge(res, DT, by=c("IPfrom", "IPto"))[order(i), .(Country, Region, City, Zip)]
+  final <- merge(res, DT, by=c("IPfrom", "IPto"))[order(i), .(Abrv, Country,
+                                                              Region, City,
+                                                              Zip, Lat,
+                                                              Long, GMT)]
 
-  country <- as.vector(as.character(final[[1]]))
-  region <- as.vector(as.character(final[[2]]))
-  city <- as.vector(as.character(final[[3]]))
-  zip <- as.vector(as.character(final[[4]]))
+  abrv <- as.vector(as.character(final[[1]]))
+  country <- as.vector(as.character(final[[2]]))
+  region <- as.vector(as.character(final[[3]]))
+  city <- as.vector(as.character(final[[4]]))
+  zip <- as.vector(as.character(final[[5]]))
+  lat <- as.vector(as.character(final[[6]]))
+  long <- as.vector(as.character(final[[7]]))
+  gmt <- as.vector(as.character(final[[8]]))
 
-  final <- data.frame(country, region, city, zip)
-#   final <- data.frame(as.character(final[[1]]), as.character(final[[2]]),
-#                       as.character(final[[3]]), as.character(final[[4]]),
-#                       col.names = c("Country", "Region", "City", "Zip"))
+  final <- data.frame(abrv, country, region, city, zip, lat, long, gmt)
   return(final)
 }
 
 
-#' Convert IP address to country name, region, city, and zip code
+#' Convert IP address to location (country name, region, city, zip code,
+#' latitude, longitude, and GMT)
 #'
 #' @param IP.address a character or factor vector of one or more IP addresses
-#' @param IP.database an IP database, see \code{?ip2location.lite.db1}
-#' @return Returns a factor vector of country names corresponding to
-#'   \code{IP.address}
+#' @param IP.database an IP database, see \code{?ip2location.lite.db11}
+#' @return Returns a data.frame containin the country name, region, city, and
+#'   zip code corresponding to \code{IP.address}
 #'
 #' @export
 #' @examples
-#' IP_country(IPs)
+#' IP_location(IPs)
 #'
-IP_country2 <- function(IP.address, IP.database = NULL) {
+IP_location <- function(IP.address, IP.database = NULL) {
   IP.integer <- IP_integer(IP.address)
-  country <- IP_lookup2(IP.integer, IP.database)
+  country <- IP_lookup_full(IP.integer, IP.database)
   return(country)
 }
-
-
-#' Convert IP address to country name, region, city, and zip code
-#'
-#' @param IP.address a character or factor vector of one or more IP addresses
-#' @param IP.database an IP database, see \code{?ip2location.lite.db1}
-#' @return Returns a factor vector of country names corresponding to
-#'   \code{IP.address}
-#'
-#' @export
-#' @examples
-#' IP_country(IPs)
-#'
-IP_country4 <- function(IP.address, IP.database = NULL, country.input = T,
-                        region = F, city = F, zip = F) {
-  IP.integer <- IP_integer(IP.address)
-  country <- IP_lookup2(IP.integer, IP.database)
-
-  add <- vector()
-  index <- 1
-
-  if(country.input) {
-    add[index] <- 1
-    index <- index + 1
-  }
-  if(region) {
-    add[index] <- 2
-    index <- index + 1
-  }
-  if(city) {
-    add[index] <- 3
-    index <- index + 1
-  }
-  if(zip) {
-    add[index] <- 4
-    index <- index + 1
-  }
-
-  sample <- list()
-  for(i in 1:length(add)) {
-    sample <- append(sample, country[[add[i]]])
-  }
-
-  return(sample)
-}
-
-
-#' Convert IP address to country and other info (region, city, zip) if requested
-#' Making full == T automatically converts all info into TRUE
-#'
-#' @param IP.address a character or factor vector of one or more IP addresses
-#' @param IP.database an IP database, see \code{?ip2location.lite.db1}
-#' @return Returns a factor vector of country names corresponding to
-#'   \code{IP.address}
-#'
-#' @export
-#' @examples
-#' IP_country(IPs)
-#'
-IP_country3 <- function(IP.address, IP.database = NULL, details = "min") {
-  if(details == "min")
-    return(IP_country(IP.address, IP.database = NULL))
-  else if(details == "max"){
-    return(IP_country2(IP.address, IP.database = NULL))
-  }
-
-}
-
-
