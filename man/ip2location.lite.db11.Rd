@@ -4,7 +4,7 @@
 \name{ip2location.lite.db11}
 \alias{ip2location.lite.db11}
 \title{IP database - large}
-\format{A data.frame with four variables
+\format{A data.frame with ten variables
 \describe{
   \item{IPfrom}{Start of IP integer range}
   \item{IPto}{End of IP integer range}
