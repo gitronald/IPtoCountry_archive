@@ -33,7 +33,7 @@
 #' Last updated: 06/02/2016
 #'
 #'
-#' @format A data.frame with four variables
+#' @format A data.frame with ten variables
 #' \describe{
 #'   \item{IPfrom}{Start of IP integer range}
 #'   \item{IPto}{End of IP integer range}
