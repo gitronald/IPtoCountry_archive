@@ -1,0 +1,178 @@
+group	n	prop
+1	-	7459	0.14918
+2	Albania	3	6e-05
+3	Algeria	45	9e-04
+4	Angola	13	0.00026
+5	Antigua and Barbuda	1	2e-05
+6	Argentina	236	0.00472
+7	Armenia	6	0.00012
+8	Aruba	1	2e-05
+9	Australia	604	0.01208
+10	Austria	140	0.0028
+11	Azerbaijan	8	0.00016
+12	Bahamas	1	2e-05
+13	Bahrain	5	1e-04
+14	Bangladesh	13	0.00026
+15	Barbados	1	2e-05
+16	Belarus	17	0.00034
+17	Belgium	164	0.00328
+18	Belize	2	4e-05
+19	Bermuda	3	6e-05
+20	Bhutan	1	2e-05
+21	Bolivia, Plurinational State of	20	4e-04
+22	Bosnia and Herzegovina	16	0.00032
+23	Botswana	3	6e-05
+24	Brazil	980	0.0196
+25	Brunei Darussalam	3	6e-05
+26	Bulgaria	48	0.00096
+27	Burkina Faso	2	4e-05
+28	Cambodia	4	8e-05
+29	Cameroon	4	8e-05
+30	Canada	820	0.0164
+31	Cayman Islands	4	8e-05
+32	Chile	111	0.00222
+33	China	4055	0.0811
+34	Colombia	226	0.00452
+35	Congo	1	2e-05
+36	Congo, The Democratic Republic of The	2	4e-05
+37	Costa Rica	24	0.00048
+38	Cote D'ivoire	5	1e-04
+39	Croatia	32	0.00064
+40	Cuba	2	4e-05
+41	Curacao	1	2e-05
+42	Cyprus	7	0.00014
+43	Czech Republic	114	0.00228
+44	Denmark	142	0.00284
+45	Djibouti	1	2e-05
+46	Dominican Republic	22	0.00044
+47	Ecuador	34	0.00068
+48	Egypt	229	0.00458
+49	El Salvador	6	0.00012
+50	Estonia	20	4e-04
+51	Ethiopia	7	0.00014
+52	Fiji	1	2e-05
+53	Finland	138	0.00276
+54	France	1060	0.0212
+55	French Guiana	1	2e-05
+56	Gabon	4	8e-05
+57	Gambia	3	6e-05
+58	Georgia	15	3e-04
+59	Germany	1452	0.02904
+60	Ghana	15	3e-04
+61	Gibraltar	2	4e-05
+62	Greece	88	0.00176
+63	Guadeloupe	3	6e-05
+64	Guam	2	4e-05
+65	Guatemala	4	8e-05
+66	Guernsey	1	2e-05
+67	Guyana	1	2e-05
+68	Haiti	2	4e-05
+69	Honduras	4	8e-05
+70	Hong Kong	143	0.00286
+71	Hungary	69	0.00138
+72	Iceland	12	0.00024
+73	India	500	0.01
+74	Indonesia	238	0.00476
+75	Iran, Islamic Republic of	149	0.00298
+76	Iraq	7	0.00014
+77	Ireland	114	0.00228
+78	Israel	92	0.00184
+79	Italy	619	0.01238
+80	Jamaica	3	6e-05
+81	Japan	2278	0.04556
+82	Jersey	1	2e-05
+83	Jordan	6	0.00012
+84	Kazakhstan	36	0.00072
+85	Kenya	71	0.00142
+86	Korea, Republic of	1338	0.02676
+87	Kuwait	26	0.00052
+88	Kyrgyzstan	4	8e-05
+89	Latvia	19	0.00038
+90	Lebanon	5	1e-04
+91	Lesotho	1	2e-05
+92	Libya	8	0.00016
+93	Liechtenstein	1	2e-05
+94	Lithuania	26	0.00052
+95	Luxembourg	15	3e-04
+96	Macao	8	0.00016
+97	Macedonia, The Former Yugoslav Republic of	12	0.00024
+98	Madagascar	4	8e-05
+99	Malawi	4	8e-05
+100	Malaysia	58	0.00116
+101	Maldives	1	2e-05
+102	Malta	9	0.00018
+103	Mauritius	17	0.00034
+104	Mexico	345	0.0069
+105	Moldova, Republic of	17	0.00034
+106	Monaco	1	2e-05
+107	Mongolia	5	1e-04
+108	Montenegro	3	6e-05
+109	Montserrat	1	2e-05
+110	Morocco	120	0.0024
+111	Mozambique	4	8e-05
+112	Namibia	5	1e-04
+113	Nauru	1	2e-05
+114	Nepal	6	0.00012
+115	Netherlands	580	0.0116
+116	New Caledonia	1	2e-05
+117	New Zealand	99	0.00198
+118	Nicaragua	5	1e-04
+119	Nigeria	37	0.00074
+120	Norway	172	0.00344
+121	Oman	8	0.00016
+122	Pakistan	62	0.00124
+123	Palestine, State of	8	0.00016
+124	Panama	23	0.00046
+125	Papua New Guinea	1	2e-05
+126	Paraguay	11	0.00022
+127	Peru	45	9e-04
+128	Philippines	72	0.00144
+129	Poland	269	0.00538
+130	Portugal	67	0.00134
+131	Puerto Rico	16	0.00032
+132	Qatar	8	0.00016
+133	Reunion	4	8e-05
+134	Romania	103	0.00206
+135	Russian Federation	550	0.011
+136	Rwanda	5	1e-04
+137	Saint Lucia	1	2e-05
+138	Saint Vincent and The Grenadines	1	2e-05
+139	San Marino	1	2e-05
+140	Saudi Arabia	111	0.00222
+141	Senegal	6	0.00012
+142	Serbia	32	0.00064
+143	Seychelles	10	2e-04
+144	Sierra Leone	3	6e-05
+145	Singapore	90	0.0018
+146	Slovakia	30	6e-04
+147	Slovenia	38	0.00076
+148	Solomon Islands	1	2e-05
+149	South Africa	329	0.00658
+150	Spain	350	0.007
+151	Sri Lanka	3	6e-05
+152	Sudan	16	0.00032
+153	Swaziland	1	2e-05
+154	Sweden	318	0.00636
+155	Switzerland	240	0.0048
+156	Syrian Arab Republic	8	0.00016
+157	Taiwan, Province of China	395	0.0079
+158	Tajikistan	1	2e-05
+159	Tanzania, United Republic of	20	4e-04
+160	Thailand	101	0.00202
+161	Togo	3	6e-05
+162	Trinidad and Tobago	5	1e-04
+163	Tunisia	64	0.00128
+164	Turkey	186	0.00372
+165	Turks and Caicos Islands	1	2e-05
+166	Uganda	2	4e-05
+167	Ukraine	126	0.00252
+168	United Arab Emirates	52	0.00104
+169	United Kingdom	1456	0.02912
+170	United States	18665	0.3733
+171	Uruguay	26	0.00052
+172	Uzbekistan	2	4e-05
+173	Venezuela, Bolivarian Republic of	87	0.00174
+174	Viet Nam	191	0.00382
+175	Virgin Islands, U.S.	1	2e-05
+176	Yemen	2	4e-05
+177	Zambia	13	0.00026
