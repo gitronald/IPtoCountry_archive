@@ -3,6 +3,7 @@ Title: Fast IP Address to Country Converter
 Version: 0.0.0.9001
 Authors@R: c(
     person(c("Ronald", "E."), "Robertson",, "rrobertson@aibrt.org", c("cre", "aut")),
+    person("Felix", "Tran", email = "felix.2930@gmail.com", role = "ctb"),
     person("Christine", "Mourani", email = "cmourani12@yahoo.com", role = "ctb"),
     person("Jonathan", "Mejia", email = "mejiajon@yahoo.com", role = "ctb")
     )
