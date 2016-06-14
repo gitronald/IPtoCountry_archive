@@ -13,7 +13,7 @@ plotIPs = function(sample_IPs) {
   sample_dft = dft(sample_countries, perc= F)
 
   ipData = sample_dft
-  countryNames = read.table("data/matched_country_names.txt", sep = "\t", quote = "", header = T, stringsAsFactors = F)
+  countryNames = matched_countries
   countryNames$IP.Countries = gsub("\"", "", countryNames$IP.Countries)
 
 
