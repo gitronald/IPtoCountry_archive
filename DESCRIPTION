@@ -9,11 +9,15 @@ Authors@R: c(
     )
 Description: A fast IP address to country converter. Includes functions for converting IP
   addresses to country names, location details (region, city, zip, latitude, longitude),
-  IP codes. The default IP databases are from lite.ip2location.com.
+  IP codes, plotting IPs on a world map. The default IP databases are from lite.ip2location.com.
 Depends:
     R (>= 3.2.3),
 Imports:
-    data.table
+    data.table,
+    ggplot2,
+    dtables, 
+    maps, 
+    scales
 License: GPL-3
 LazyData: true
 RoxygenNote: 5.0.1

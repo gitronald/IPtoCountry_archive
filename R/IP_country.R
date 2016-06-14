@@ -1,6 +1,13 @@
 # This line of code appeases the CRAN check for visible bindings, see:
 # http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when?rq=1
-utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto", "Country", ".", ":=", "i"))
+utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto",
+                         "Country", ".", ":=", "i", "Abrv",
+                         "City", "GMT", "Lat", "Long", "Region",
+                         "Zip", "aggregate", "group", "ip2location.lite.db11",
+                         "lat", "long", "prop"
+                         )
+                       )
+
 
 #' Convert IP address to country name
 #'

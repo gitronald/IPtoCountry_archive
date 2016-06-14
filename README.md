@@ -91,6 +91,19 @@ Levels: Japan
 [1] "125.65.50.53"    "79.250.76.62"    "142.245.152.177" "230.76.201.42"   "107.182.57.171" 
 ```
 
+### IP_plot - Convert IPs to countries and plot on world map
+*Enter IPs, get a  map with gradient coloring reflecting the percentage of IP addresses originating in each country
+``` {r}
+>IP_plot(IP.address.database)
+```
+
+Example plot:
+![](https://i.imgur.com/WXmZV1b.png)
+
+
+
+
+
 ### Speed
 * Ludicrous speed, 33,333 IPs/sec feels like 666 km/sec.
 ``` {r}
