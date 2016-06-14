@@ -8,6 +8,8 @@
 #' @examples
 #' plotIPs(sample_IPs)
 plotIPs = function(sample_IPs) {
+
+  mapData = map_data("world")
   sample_countries= IP_country(sample_IPs)
 
   sample_dft = dft(sample_countries, perc= F)
