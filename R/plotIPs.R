@@ -1,18 +1,19 @@
-#' Title
-#'Convert IPs to countries and plot on world map
-#' @param sample_IPs a vector of IP addresses
+#' Convert IPs to countries and plot on world map
 #'
-#' @return Returns a gradient map, indicating % of IP addresses originating from each country
+#' @param IP.address a vector or column of IP addresses
+#'
+#' @return Returns a world map plot with gradient coloring reflecting the
+#'   percentage of IP addresses originating in each country
 #' @importFrom dtables dft
 #' @importFrom ggplot2 map_data
 #' @export
 #'
 #' @examples
-#' plotIPs(sample_IPs)
-plotIPs = function(sample_IPs) {
+#' plotIPs(IP.address)
+plotIPs = function(IP.address) {
 
   mapData = map_data("world")
-  sample_countries= IP_country(sample_IPs)
+  sample_countries= IP_country(IP.address)
 
   sample_dft = dft(sample_countries, perc= F)
 
