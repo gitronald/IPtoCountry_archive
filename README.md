@@ -104,7 +104,3 @@ Unit: milliseconds
 
 ```
 
-
-
-#### todo
-* Finish IP_binary function and add reverse function
