@@ -5,12 +5,12 @@
 #' @return Returns a world map plot with gradient coloring reflecting the
 #'   percentage of IP addresses originating in each country
 #' @importFrom dtables dft
-#' @importFrom ggplot2 map_data
+#' @import ggplot2
 #' @export
 #'
 #' @examples
-#' plotIPs(IP.address)
-plotIPs = function(IP.address) {
+#' IP_plot(IP.address)
+IP_plot = function(IP.address) {
 
   mapData = map_data("world")
   sample_countries= IP_country(IP.address)
