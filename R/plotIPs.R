@@ -3,6 +3,8 @@
 #' @param sample_IPs a vector of IP addresses
 #'
 #' @return Returns a gradient map, indicating % of IP addresses originating from each country
+#' @importFrom dtables dft
+#' @importFrom ggplot2 map_data
 #' @export
 #'
 #' @examples
