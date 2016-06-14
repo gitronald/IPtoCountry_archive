@@ -14,7 +14,7 @@
 #' @examples
 #' IP_plot(IPs)
 
-IP_plot = function(IP.address) {
+IP_plot = function(IP.address, gradient.min = "white", gradient.max= "#000000") {
 
   mapData = map_data("world")
   countries= IP_country(IP.address)
@@ -57,15 +57,19 @@ IP_plot = function(IP.address) {
     geom_polygon(data=world, aes(x=long, y=lat, group = group),
                  colour = "#595959",                            # Country boundary outline
                  fill = "white") +                            # Country fill
-    theme(panel.background = element_rect(fill = "#b3b3b3"),    # Image frame color
-          plot.background = element_rect(fill = "#b3b3b3"))     # Ocean color
-
+    theme(panel.background = element_rect(fill = "#b2cce5"),    # Image frame color
+          plot.background = element_rect(fill = "#b2cce5"))     # Ocean color
+  #create map color vectors
+  
+  mapcolors = c("black", "#d6d6d6", "white")
+  mapvalues = c(1, .025, 0)
+  
   # Plot data on blank map
   plot1 <- p + geom_polygon(data=worldMapIPs,                                  # Fill countries
                             aes(x=long, y=lat, group = group, fill = prop)) +
     geom_path(data=worldMapIPs,
-              aes(x=long, y=lat, group=group), color="#595959", size=0.3) +      # Fill borders
-    scale_fill_gradient(low = "white", high = "#000071",                       # Fill color gradient
+              aes(x=long, y=lat, group=group), color="#595959", size=0.05) +      # Fill borders
+    scale_fill_gradientn(colours= mapcolors, values= mapvalues,                       # Fill color gradient
                         labels = percent_format(),
                         limits = c(0,1)) +
     ggtitle(paste("Data Origins")) +
@@ -83,6 +87,4 @@ IP_plot = function(IP.address) {
   return(plot1)
 }
 
-
-#colors = c("#0004d", "#00099", "#0000ff", "#8080ff", "#e6e6ff", "white")
 
