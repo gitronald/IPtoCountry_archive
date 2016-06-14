@@ -1,5 +1,5 @@
 Package: IPtoCountry
-Title: Fast IP Address to Country Converter
+Title: IP Address to Country or Full Location with Plotting
 Version: 0.0.0.9001
 Authors@R: c(
     person(c("Ronald", "E."), "Robertson",, "rrobertson@aibrt.org", c("cre", "aut")),
@@ -8,8 +8,8 @@ Authors@R: c(
     person("Jonathan", "Mejia", email = "mejiajon@yahoo.com", role = "ctb")
     )
 Description: A fast IP address to country converter. Includes functions for converting IP
-  addresses to country names, converting IP addresses to IP codes, and looking up IP codes
-  in alternative databases. The default IP database is from ip2location.com.
+  addresses to country names, location details (region, city, zip, latitude, longitude),
+  IP codes. The default IP databases are from lite.ip2location.com.
 Depends:
     R (>= 3.2.3),
 Imports:
