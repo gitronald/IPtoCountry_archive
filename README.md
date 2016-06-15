@@ -27,10 +27,11 @@ Internet Protocol (IP) addresses serve as the feelers upon which the Internet is
 
 IPv6 was built to overcome the eventual exhaustion of available IPv4 addresses, but that hasn't largely happened yet, so we'll just ignore them for now and focus on IPv4.
 
+------
 ### Determining the Location of IP Addresses
 
 ##### Step 1 - Split IP address into four octets  
--------
+
 ``` {r}
 > IP_split("180.20.23.162")
 ```
@@ -40,7 +41,7 @@ ip.split  180   20   23  162
 ```
 
 ##### Step 2 - Calculate IP Integer from Octets  
--------
+
 * Long way
 
 ``` {r}
@@ -74,6 +75,7 @@ ip.split  180   20   23  162
 [1] "China"
 ```
 
+------
 ### IP_country - Convert IP address to country name
 * All of the above in one simple function
 * Powered by `data.table`
@@ -88,6 +90,7 @@ ip.split  180   20   23  162
 Levels: China
 ```
 
+------
 ### IP_location - Convert IP address into detailed location 
 * Produces dataframe with country abreviation, country name, region, city, zip code, latitude, longitude, and GMT
 
@@ -101,6 +104,7 @@ Levels: China
 1   CN   China Beijing Beijing 100006 39.9075 116.39723 +08:00
 ```
 
+------
 ### IP_plot - Convert IPs to countries and plot on world map
 * Enter IPs, get a  map with gradient coloring reflecting the percentage of IP addresses originating in each country
 
@@ -110,6 +114,7 @@ Levels: China
 
 ![](https://i.imgur.com/WXmZV1b.png)
 
+------
 ### IP_generator - Generate random IP addresses
 * Generate five random IP addresses
 ``` {r}
@@ -120,6 +125,7 @@ Levels: China
 [1] "125.65.50.53"    "79.250.76.62"    "142.245.152.177" "230.76.201.42"   "107.182.57.171" 
 ```
 
+------
 ### Speed
 
 ``` {r}
