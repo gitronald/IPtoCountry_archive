@@ -72,7 +72,7 @@ IP_plot = function(IP.address) {
     scale_fill_gradientn(colours= mapcolors, values= mapvalues,                       # Fill color gradient
                         labels = percent_format(),
                         limits = c(0,1)) +
-    ggtitle(paste("Data Origins")) +
+
     theme(plot.title = element_text(size = 20, colour = "black", family = "sans",
                                     margin = unit(c(0, 0, 5, 0), "mm"))) +
     scale_y_continuous(name=NULL, breaks=NULL, expand = c(0,0)) +
