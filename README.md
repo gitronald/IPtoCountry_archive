@@ -112,7 +112,7 @@ Levels: China
 >IP_plot(IP.address.database)
 ```
 
-![](https://i.imgur.com/WXmZV1b.png)
+![](https://i.imgur.com/Fymyju2.png)
 
 ------
 ### IP_generator - Generate random IP addresses
