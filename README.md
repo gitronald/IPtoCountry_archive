@@ -29,7 +29,7 @@ IPv6 was built to overcome the eventual exhaustion of available IPv4 addresses, 
 
 ### Determining the Location of IP Addresses
 
-#### Step 1 - Split IP address into four octets  
+##### Step 1 - Split IP address into four octets  
 -------
 ``` {r}
 > IP_split("180.20.23.162")
@@ -39,9 +39,10 @@ IPv6 was built to overcome the eventual exhaustion of available IPv4 addresses, 
 ip.split  180   20   23  162
 ```
 
-#### Step 2 - Calculate IP Integer from Octets  
+##### Step 2 - Calculate IP Integer from Octets  
 -------
 * Long way
+
 ``` {r}
 > Octet1 = 180
 > Octet2 = 20
@@ -49,27 +50,31 @@ ip.split  180   20   23  162
 > Octet4 = 162
 > (Octet1 * 256^3) + (Octet2 * 256^2) + (Octet3 * 256^1) + (Octet4 * 256^0)
 ```
-``` {r}
-[1] 3021215650
-```
-* Short way!
-``` {r}
-> IP_integer("180.20.23.162")
-```
+
 ``` {r}
 [1] 3021215650
 ```
 
-#### Step 3 - Lookup Location Assigned to IP Integers in a Database  
--------
+* Short way!
+
+``` {r}
+> IP_integer("180.20.23.162")
+```
+
+``` {r}
+[1] 3021215650
+```
+
+##### Step 3 - Lookup IP Integer in a Database  
+
 ``` {r}
 > IP_lookup(3021215650)
 ```
 ``` {r}
-[1] "Japan"
+[1] "China"
 ```
 
-### IP_country - Fast IP address to country name conversion
+### IP_country - Convert IP address to country name
 * All of the above in one simple function
 * Powered by `data.table`
 
@@ -77,48 +82,64 @@ ip.split  180   20   23  162
 > IP_country("180.20.23.162")
 
 ```
+
 ``` {r}
-[1] Japan
-Levels: Japan
+[1] China
+Levels: China
 ```
-### IP_location - provides info about location of an IP address 
+
+### IP_location - Convert IP address into detailed location 
 * Produces dataframe with country abreviation, country name, region, city, zip code, latitude, longitude, and GMT
+
 ``` {r}
-> IP_location("144.147.208.187")
+> IP_location("180.20.23.162")
 
 ```
+
 ``` {r}
- abrv       country  region          city   zip      lat       long    gmt
-1   US United States Arizona Fort Huachuca 85613 31.55646 -110.35056 -07:00
+  abrv country  region    city    zip     lat      long    gmt
+1   CN   China Beijing Beijing 100006 39.9075 116.39723 +08:00
 ```
+
 ### IP_plot - Convert IPs to countries and plot on world map
 * Enter IPs, get a  map with gradient coloring reflecting the percentage of IP addresses originating in each country
+
 ``` {r}
 >IP_plot(IP.address.database)
 ```
 
 ![](https://i.imgur.com/WXmZV1b.png)
 
-### IP_generator - Fool your friends!
+### IP_generator - Generate random IP addresses
 * Generate five random IP addresses
 ``` {r}
 > IP_generator(5)
-
 ```
+
 ``` {r}
 [1] "125.65.50.53"    "79.250.76.62"    "142.245.152.177" "230.76.201.42"   "107.182.57.171" 
 ```
 
 ### Speed
-* Ludicrous speed, 33,333 IPs/sec feels like 666 km/sec.
-``` {r}
-> microbenchmark(IP_country(IP_generator(10000)))
 
+``` {r}
+> library(microbenchmark)
+> microbenchmark(IP_country(IPs))
 ```
+
 ``` {r}
 Unit: milliseconds
-                            expr      min       lq     mean   median       uq      max neval
- IP_country(IP_generator(10000)) 325.8086 364.2893 390.6751 383.0947 413.8585 500.9444   100
+            expr      min       lq    mean  median       uq      max neval
+ IP_country(IPs) 85.27124 87.03638 91.0021 87.6341 89.12941 206.8301   100
+```
 
+``` {r}
+> microbenchmark(IP_location(IPs))
+```
+
+``` {r}
+Unit: seconds
+             expr      min       lq     mean  median       uq     max neval
+ IP_location(IPs) 3.673867 4.228647 4.614923 4.44011 4.993532 6.40974   100
 ```
 
