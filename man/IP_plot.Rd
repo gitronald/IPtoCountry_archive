@@ -17,6 +17,6 @@ Returns a world map plot with gradient coloring reflecting the
 Convert IPs to countries and plot on world map
 }
 \examples{
-IP_plot(IP.address)
+IP_plot(IPs)
 }
 

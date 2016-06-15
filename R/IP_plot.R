@@ -5,27 +5,25 @@
 #' @return Returns a world map plot with gradient coloring reflecting the
 #'   percentage of IP addresses originating in each country
 #' @importFrom dtables dft
+#' @importFrom stats aggregate
 #' @import ggplot2
+#' @import maps
+#' @importFrom scales percent_format
 #' @export
 #'
 #' @examples
-#' IP_plot(IP.address)
+#' IP_plot(IPs)
+
 IP_plot = function(IP.address) {
 
   mapData = map_data("world")
-  sample_countries= IP_country(IP.address)
+  countries= IP_country(IP.address)
 
-  sample_dft = dft(sample_countries, perc= F)
+  dft = dft(countries, perc= F)
 
-  ipData = sample_dft
-  countryNames = matched_countries
+  ipData = dft
+  countryNames = sysdata
   countryNames$IP.Countries = gsub("\"", "", countryNames$IP.Countries)
-
-
-  #ipData = read.table("lab/random_ips_dft", sep = "\t", quote = "", header = T, stringsAsFactors = F)
-  #countryNames = read.table("lab/matched_country_names.txt", sep = "\t", quote = "", header = T, stringsAsFactors = F)
-  #countryNames$IP.Countries = gsub("\"", "", countryNames$IP.Countries)
-
 
   # Change IP data names to match Map data
   for(i in 1:nrow(countryNames)){
@@ -59,16 +57,20 @@ IP_plot = function(IP.address) {
     geom_polygon(data=world, aes(x=long, y=lat, group = group),
                  colour = "#595959",                            # Country boundary outline
                  fill = "white") +                            # Country fill
-    theme(panel.background = element_rect(fill = "#b3b3b3"),    # Image frame color
-          plot.background = element_rect(fill = "#b3b3b3"))     # Ocean color
+    theme(panel.background = element_rect(fill = "#b2cce5"),    # Image frame color
+          plot.background = element_rect(fill = "#b2cce5"))     # Ocean color
+  #create map color vectors
+
+  mapcolors = c("black", "#d6d6d6", "white")
+  mapvalues = c(1, .025, 0)
 
   # Plot data on blank map
   plot1 <- p + geom_polygon(data=worldMapIPs,                                  # Fill countries
                             aes(x=long, y=lat, group = group, fill = prop)) +
     geom_path(data=worldMapIPs,
-              aes(x=long, y=lat, group=group), color="#595959", size=0.3) +      # Fill borders
-    scale_fill_gradient(low = "white", high = "#000071",                       # Fill color gradient
-                        labels = scales::percent_format(),
+              aes(x=long, y=lat, group=group), color="#595959", size=0.05) +      # Fill borders
+    scale_fill_gradientn(colours= mapcolors, values= mapvalues,                       # Fill color gradient
+                        labels = percent_format(),
                         limits = c(0,1)) +
     ggtitle(paste("Data Origins")) +
     theme(plot.title = element_text(size = 20, colour = "black", family = "sans",
@@ -84,4 +86,5 @@ IP_plot = function(IP.address) {
     guides(fill = guide_colorbar(barwidth = rel(0.5), barheight = rel(5.0), ticks = F))
   return(plot1)
 }
+
 
