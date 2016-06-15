@@ -81,6 +81,24 @@ ip.split  180   20   23  162
 [1] Japan
 Levels: Japan
 ```
+### IP_location - provides info about location of an IP address 
+* Produces dataframe with country abreviation, country name, region, city, zip code, latitude, longitude, and GMT
+``` {r}
+> IP_location("144.147.208.187")
+
+```
+``` {r}
+ abrv       country  region          city   zip      lat       long    gmt
+1   US United States Arizona Fort Huachuca 85613 31.55646 -110.35056 -07:00
+```
+### IP_plot - Convert IPs to countries and plot on world map
+* Enter IPs, get a  map with gradient coloring reflecting the percentage of IP addresses originating in each country
+``` {r}
+>IP_plot(IP.address.database)
+```
+
+![](https://i.imgur.com/WXmZV1b.png)
+
 ### IP_generator - Fool your friends!
 * Generate five random IP addresses
 ``` {r}
@@ -90,19 +108,6 @@ Levels: Japan
 ``` {r}
 [1] "125.65.50.53"    "79.250.76.62"    "142.245.152.177" "230.76.201.42"   "107.182.57.171" 
 ```
-
-### IP_plot - Convert IPs to countries and plot on world map
-*Enter IPs, get a  map with gradient coloring reflecting the percentage of IP addresses originating in each country
-``` {r}
->IP_plot(IP.address.database)
-```
-
-Example plot:
-![](https://i.imgur.com/WXmZV1b.png)
-
-
-
-
 
 ### Speed
 * Ludicrous speed, 33,333 IPs/sec feels like 666 km/sec.
