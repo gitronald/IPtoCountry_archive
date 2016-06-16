@@ -8,7 +8,7 @@
 -->
 
 
-* A fast function for converting IP addresses (IPv4) to the country names they're located in.
+* Functions for converting IP addresses (IPv4) into country names or location details in R.
 
 <sub>Default database is available by Creative Commons Attribution-ShareAlike 4.0 Interational license (CC-BY-SA 4.0).  
 This site or product includes IP2Location LITE data available from http://www.ip2location.com.</sub>
