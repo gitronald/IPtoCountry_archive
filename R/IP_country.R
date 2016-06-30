@@ -147,17 +147,21 @@ IP_location <- function(IP.address, IP.database = NULL) {
       library(IPtoCountryDB11)
    }
 
-  ask.download= function(){
-    print("Would you like to download data necessary to run this function?")
-    choices= c("yes", "no")
-    x = menu(choices, graphics= FALSE, title= NULL)
+  IP.integer <- IP_integer(IP.address)
+  country <- IP_lookup_full(IP.integer, IP.database)
+  return(country)
+}
 
-  if (x == "yes") {
+
+ask.download= function(){
+  print("Would you like to download data necessary to run this function?")
+  choices= c("yes", "no")
+  x = menu(choices, graphics= FALSE, title= NULL)
+
+  if (x == 1) {
     devtools::install_github("cmourani/IPtoCountryDB11")
     library(IPtoCountryDB11)
   } else {
     stop("Function cancelled")
-  }}
-  IP.integer <- IP_integer(IP.address)
-  country <- IP_lookup_full(IP.integer, IP.database)
-  return(country) }
+  }
+}
