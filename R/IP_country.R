@@ -1,13 +1,9 @@
 # This line of code appeases the CRAN check for visible bindings, see:
 # http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when?rq=1
 utils::globalVariables(c("ip2location.lite.db1", "IPfrom", "IPto",
-                         "Country", ".", ":=", "i", "Abrv",
-                         "City", "GMT", "Lat", "Long", "Region",
-                         "Zip", "aggregate", "group", "ip2location.lite.db11",
-                         "lat", "long", "prop"
+                         "Country", ".", ":=", "i"
                          )
                        )
-
 
 #' Convert IP address to country name
 #'
@@ -144,7 +140,24 @@ IP_lookup_full <- function(IP.integer, IP.database = NULL) {
 #' IP_location(IPs)
 #'
 IP_location <- function(IP.address, IP.database = NULL) {
+  "IPtoCountryDB11" %in% rownames(installed.packages())
+   if("IPtoCountryDB11" %in% rownames(installed.packages()) == FALSE) {
+     ask.download()
+   } else {
+      library(IPtoCountryDB11)
+   }
+
+  ask.download= function(){
+    print("Would you like to download data necessary to run this function?")
+    choices= c("yes", "no")
+    x = menu(choices, graphics= FALSE, title= NULL)
+
+  if (x == "yes") {
+    devtools::install_github("cmourani/IPtoCountryDB11")
+    library(IPtoCountryDB11)
+  } else {
+    stop("Function cancelled")
+  }}
   IP.integer <- IP_integer(IP.address)
   country <- IP_lookup_full(IP.integer, IP.database)
-  return(country)
-}
+  return(country) }
