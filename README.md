@@ -1,5 +1,7 @@
 # IPtoCountry
 
+## NOTE: Use newer, faster version of this package here: https://github.com/gitronald/IPtoCountry 
+
 [![Build Status](https://travis-ci.org/gitronald/IPtoCountry.svg?branch=master)](https://travis-ci.org/gitronald/IPtoCountry)
 
 <!--
