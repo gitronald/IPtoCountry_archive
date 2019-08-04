@@ -94,7 +94,7 @@ Levels: China
 
 ------
 ### IP_location - Convert IP address into detailed location 
-* Produces dataframe with country abreviation, country name, region, city, zip code, latitude, longitude, and GMT
+* Produces dataframe with country abbreviation, country name, region, city, zip code, latitude, longitude, and GMT
 
 ``` {r}
 > IP_location("180.20.23.162")
